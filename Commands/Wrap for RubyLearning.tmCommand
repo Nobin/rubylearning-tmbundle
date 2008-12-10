@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+# -*- coding: utf-8 -*-
+
+# Change the code to be ready for pasting in RubyLearning forums.
+# Add the result to clipboard
+
+output = []
+STDIN.readlines.each do |line|
+  output &lt;&lt; line.gsub(/\&lt;/, "&amp;lt;")
+end
+
+result = "[code ruby]#{output}[/code]"
+
+require 'shell' # I don't know why I need this
+sh = Shell.new
+sh.transact do
+  sh.system("echo", result) | sh.system("pbcopy")
+end
+
+puts "Added to clipboard."</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Wrap for RubyLearning</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>uuid</key>
+	<string>85DC23D2-55ED-4EFF-A3FB-89EC1F8C9BB4</string>
+</dict>
+</plist>
