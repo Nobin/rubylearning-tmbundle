@@ -30,7 +30,7 @@ puts "Added to clipboard."</string>
 	<key>name</key>
 	<string>Wrap for RubyLearning</string>
 	<key>output</key>
-	<string>replaceSelectedText</string>
+	<string>showAsTooltip</string>
 	<key>uuid</key>
 	<string>85DC23D2-55ED-4EFF-A3FB-89EC1F8C9BB4</string>
 </dict>
